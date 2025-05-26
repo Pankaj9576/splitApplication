@@ -1,0 +1,23 @@
+# Dependency folders
+node_modules/
+
+# Environment variables
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Build outputs (optional, if you generate dist/build folders)
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code settings (optional)
+.vscode/
+
+//git remote add origin https://github.com/pankaj7809/splitscreenfrontend.git

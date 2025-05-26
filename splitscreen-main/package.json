@@ -1,0 +1,82 @@
+{
+    "name": "splitscreen-main",
+    "version": "1.0.0",
+    "main": "electron/main.js",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "server": "node server.js",
+        "clean": "rimraf build dist"
+    },
+    "dependencies": {
+        "@azure/msal-browser": "^3.28.1",
+        "@azure/msal-react": "^2.0.21",
+        "@google-cloud/bigquery": "^7.8.0",
+        "@handsontable/react": "^15.2.0",
+        "@microsoft/microsoft-graph-client": "^3.0.7",
+        "@react-oauth/google": "^0.11.1",
+        "ajv": "^6.12.6",
+        "ajv-keywords": "^3.5.2",
+        "assert": "^2.1.0",
+        "axios": "^1.4.0",
+        "browserify-zlib": "^0.2.0",
+        "buffer": "^6.0.3",
+        "cheerio": "^1.0.0-rc.12",
+        "concurrently": "^8.2.0",
+        "cors": "^2.8.5",
+        "crypto-browserify": "^3.12.0",
+        "express": "^4.18.2",
+        "firebase": "^10.12.3",
+        "gapi-script": "^1.2.0",
+        "google-auth-library": "^9.11.0",
+        "googleapis": "^140.0.1",
+        "handsontable": "^15.2.0",
+        "http2": "^3.3.7",
+        "https-browserify": "^1.0.0",
+        "msal": "^1.4.18",
+        "onedrive-api": "^1.1.1",
+        "os-browserify": "^0.3.0",
+        "papaparse": "^5.5.2",
+        "path": "^0.12.7",
+        "path-browserify": "^1.0.1",
+        "process": "^0.11.10",
+        "puppeteer": "^21.0.0",
+        "querystring-es3": "^0.2.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-dropzone": "^14.2.3",
+        "react-resizable": "^3.0.5",
+        "react-scripts": "^5.0.1",
+        "stream-browserify": "^3.0.0",
+        "stream-http": "^3.2.0",
+        "styled-components": "^5.3.5",
+        "url": "^0.11.3",
+        "util": "^0.12.5",
+        "web-vitals": "^4.2.1",
+        "xlsx": "^0.18.5"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.26.9",
+        "@babel/preset-react": "^7.26.3",
+        "react-app-rewired": "^2.2.1",
+        "rimraf": "^6.0.1"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
