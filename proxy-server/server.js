@@ -4,7 +4,10 @@ const cors = require('cors');
 const multer = require('multer');
 const mammoth = require('mammoth');
 const path = require('path');
-const fetch = require('node-fetch');
+const fs = require('fs');
+
+// Use dynamic import for node-fetch
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 (async () => {
   const app = express();
@@ -17,7 +20,6 @@ const fetch = require('node-fetch');
   const buildPath = path.join(__dirname, '../splitscreen-main/build');
 
   // Verify build path exists to prevent ENOENT errors
-  const fs = require('fs');
   if (!fs.existsSync(buildPath)) {
     console.warn(`Build path ${buildPath} does not exist. Ensure the directory is correct.`);
   }
@@ -28,12 +30,18 @@ const fetch = require('node-fetch');
     cors({
       origin: (origin, callback) => {
         const allowedOrigins = [
-          'http://localhost:3000',
-          '*',
+          'http://localhost:3000', // Frontend local development
+          'http://localhost:3001', // Additional local port if needed
+          'http://localhost:5173', // Common Vite port
+          'https://your-app.vercel.app', // Replace with your Vercel production URL
+          'https://*.vercel.app', // Allow Vercel preview URLs (use cautiously)
         ];
-        if (!origin || allowedOrigins.includes(origin)) {
+        if (!origin || allowedOrigins.some(allowed => 
+          allowed.includes('*') ? new RegExp(allowed.replace('*', '.*')).test(origin) : allowed === origin
+        )) {
           callback(null, true);
         } else {
+          console.error(`CORS rejected origin: ${origin}`);
           callback(new Error('CORS policy violation'));
         }
       },
